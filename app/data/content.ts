@@ -14,28 +14,28 @@ export const PRODUCTS: Product[] = [
     name: "Banana Gun",
     blurb:
       "DeFi trading platform on Solana: transfers, token sniping and liquidity management.",
-    image: "/work/bananagun.jpg",
+    image: "/projects/bananagun.jpg",
     url: "https://bananagun.io/",
   },
   {
     name: "Manual",
     blurb:
       "Men's health e-commerce: licensed treatment, subscriptions and ongoing care.",
-    image: "/work/manual.jpg",
+    image: "/projects/manual.jpg",
     url: "https://www.manual.co/",
   },
   {
     name: "POOLCORP",
     blurb:
       "Distribution platform for the world's largest wholesaler of pool supplies.",
-    image: "/work/poolcorp.jpg",
+    image: "/projects/poolcorp.jpg",
     url: "https://www.poolcorp.com/",
   },
   {
     name: "Social Kit",
     blurb:
       "Social media management with an agent that writes in an organisation's own voice.",
-    image: "/work/socialkit.jpg",
+    image: "/projects/socialkit.jpg",
     url: "https://www.getsocialkit.com/",
   },
 ];

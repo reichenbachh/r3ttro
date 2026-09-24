@@ -1,87 +1,45 @@
-# Welcome to React Router!
+# r3ttro
 
-A modern, production-ready template for building full-stack React applications using React Router.
+Personal site for George Wiredu Ansong. React Router (framework mode), TypeScript, Tailwind v4.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
-
-## Features
-
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
-
-## Getting Started
-
-### Installation
-
-Install the dependencies:
+## Development
 
 ```bash
 npm install
+npm run dev        # http://localhost:5173
+npm run typecheck
+npm run build      # -> build/client + build/server
+npm start          # serve the production build
 ```
 
-### Development
+## Layout
 
-Start the development server with HMR:
+```
+app/
+├── routes/          # home, work, blog, contact (registered in routes.ts)
+├── components/      # page-shell, site-nav, tag
+├── data/content.ts  # all site copy: experience, principles, stack, posts, contact links
+└── app.css          # theme tokens, animations
+```
+
+All content lives in `app/data/content.ts`. Editing your experience, principles, or stack means
+editing that one file: nothing is hardcoded in the route components.
+
+`EXPERIENCE` is ordered most-recent-first. Each role's `highlights` may carry an optional `client`
+and `clientLocation`, which render as an accent label above the bullet for agency-side work.
+
+## Product screenshots
+
+Cards in the `[ 01 / live ]` section read from `public/work/*.jpg`. To add or refresh one, drop the
+full-size capture in the repo root and resize it:
 
 ```bash
-npm run dev
+sips -Z 1400 -s format jpeg -s formatOptions 72 shot.png --out public/work/name.jpg
 ```
 
-Your application will be available at `http://localhost:5173`.
-
-## Building for Production
-
-Create a production build:
-
-```bash
-npm run build
-```
+Full-resolution PNGs should not live in `public/` — everything there ships to the browser.
 
 ## Deployment
 
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
+`Dockerfile` builds a container running the built-in `react-router-serve`. Any Node host works;
+deploy the contents of `build/`.

@@ -1,16 +1,15 @@
 import type { Route } from "./+types/contact";
+import { seo } from "../seo";
 import { PageShell } from "../components/page-shell";
 import { CONTACT_LINKS } from "../data/content";
 
 export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "Contact / George Wiredu Ansong" },
-    {
-      name: "description",
-      content:
-        "I'm always open to interesting conversations about work, ideas, or collaboration.",
-    },
-  ];
+  return seo({
+    title: "Contact / George Wiredu Ansong",
+    description:
+      "Get in touch with George Wiredu Ansong by email or LinkedIn, or book a 30 minute call to talk about work, ideas or collaboration.",
+    path: "/contact",
+  });
 }
 
 export default function Contact() {

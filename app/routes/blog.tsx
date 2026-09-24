@@ -1,15 +1,14 @@
 import type { Route } from "./+types/blog";
+import { seo } from "../seo";
 import { PageShell } from "../components/page-shell";
 
 export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "Blog / George Wiredu Ansong" },
-    {
-      name: "description",
-      content:
-        "Thoughts on software, systems, and the ideas that don't fit anywhere else.",
-    },
-  ];
+  return seo({
+    title: "Blog / George Wiredu Ansong",
+    description:
+      "Thoughts on software, systems, and the ideas that don't fit anywhere else. First posts coming soon.",
+    path: "/blog",
+  });
 }
 
 export default function Blog() {

@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import type { Route } from "./+types/home";
+import { seo, SITE_URL } from "../seo";
 import { NodeField } from "../components/node-field";
 import { SiteNav } from "../components/site-nav";
 import {
@@ -12,11 +13,23 @@ import {
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "George Wiredu Ansong / Frontend, Backend & Mobile Engineer" },
-    {
-      name: "description",
-      content:
+    ...seo({
+      title: "George Wiredu Ansong / Frontend, Backend & Mobile Engineer",
+      description:
         "Software engineer working across crypto, fintech, SaaS, AI and logistics, turning messy problems into models that ship on web and mobile. Writing code since 2019.",
+      path: "/",
+    }),
+    {
+      "script:ld+json": {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name: NAME,
+        url: SITE_URL,
+        image: `${SITE_URL}/og.png`,
+        jobTitle: "Software Engineer",
+        email: "mailto:georgeansong7@gmail.com",
+        knowsAbout: ["Frontend", "Backend", "React Native", "Fintech", "Crypto", "SaaS", "AI", "Logistics"],
+      },
     },
   ];
 }

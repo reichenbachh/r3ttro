@@ -1,17 +1,16 @@
 import type { Route } from "./+types/work";
+import { seo } from "../seo";
 import { PageShell } from "../components/page-shell";
 import { Tag } from "../components/tag";
 import { EXPERIENCE } from "../data/content";
 
 export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "Work / George Wiredu Ansong" },
-    {
-      name: "description",
-      content:
-        "Roles, teams and shipped products: web, mobile and backend work built since 2019.",
-    },
-  ];
+  return seo({
+    title: "Work & Experience / George Wiredu Ansong",
+    description:
+      "Roles, teams and shipped products: web, mobile and backend work built since 2019.",
+    path: "/work",
+  });
 }
 
 export default function Work() {

@@ -25,16 +25,16 @@ export default function Contact() {
           <a
             key={link.label}
             href={link.href}
-            className="grid grid-cols-[80px_1fr] items-center gap-8 rounded-[2px] bg-panel px-10 py-8"
+            className="grid items-center gap-3 rounded-xs bg-panel px-6 py-6 sm:grid-cols-[80px_1fr] sm:gap-8 sm:px-10 sm:py-8"
           >
             <div className="font-space-mono text-[10px] tracking-[0.15em] text-heading">
               {link.label}
             </div>
-            <div className="flex items-center justify-between">
-              <span className="text-base tracking-[0.02em] text-heading">
+            <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
+              <span className="min-w-0 text-sm tracking-[0.02em] wrap-anywhere text-heading sm:text-base">
                 {link.value}
               </span>
-              <span className="font-space-mono text-[10px] tracking-[0.06em] text-accent">
+              <span className="shrink-0 font-space-mono text-[10px] tracking-[0.06em] whitespace-nowrap text-accent">
                 {link.cta}
               </span>
             </div>

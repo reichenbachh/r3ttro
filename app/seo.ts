@@ -1,7 +1,7 @@
 import type { MetaDescriptor } from "react-router";
 
 // Change this once the site has its own domain; canonical, OG, sitemap and robots all read it.
-export const SITE_URL = "https://r3ttro.vercel.app";
+export const SITE_URL = "https://r3ttro-nine.vercel.app";
 export const SITE_NAME = "George Wiredu Ansong";
 
 export function seo({
